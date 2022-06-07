@@ -40,10 +40,10 @@ def input_remove():
         answer = input('> ')
 
 
-def prefer(person, position, points):
+def prefer(person, position):
     position -= 1
     for c in range(len(class5AD)):
-        points1 = points
+        points1 = 20
         distance = position - c
         if distance < 0:
             distance = - distance
@@ -56,15 +56,14 @@ def prefer(person, position, points):
 
 
 def input_prefer():
-    print('''ora fammi sapere quando preferisci andare, e quanto ci tieni
-    scrivilo cosi: (nome,posizione preferita,quanti punti vuoi scontare)
-    animali,18,30''')
+    print('''ora fammi sapere quando preferisci andare
+    scrivilo cosi: (nome,posizione preferita)
+    animali,18''')
     answer = input('> ')
     answer = answer.split(',')
     person = answer[0]
     position = int(answer[1])
-    points = int(answer[2])
-    prefer(person, position, points)
+    prefer(person, position)
 
 
 def assign_weighted():
@@ -100,26 +99,26 @@ def sim_remove():
 
 
 def sim_prefer():
-    prefer('alessandrini', 10, 23)
-    prefer('angelini', 14, 30)
-    prefer('animali', 20, 5)
-    prefer('arduini', 4, 10)
-    prefer('cirillo', 7, 12)
-    prefer('coletta', 4, 3)
-    prefer('de felici', 18, 27)
-    prefer("d'errico", 20, 30)
-    prefer('di laura', 16, 3)
-    prefer('romanucci', 11, 7)
-    prefer('mancini', 20, 20)
-    prefer('integlia', 20, 20)
-    prefer('police', 20, 20)
-    prefer('famosi', 20, 10)
-    prefer('mazzilli', 20, 19)
-    prefer('limiti', 20, 15)
-    prefer('rita', 20, 10)
-    prefer('mercuri', 20, 7)
-    prefer('santacchini', 20, 0)
-    prefer('gosti', 1, 0)
+    prefer('alessandrini', 10)
+    prefer('angelini', 14)
+    prefer('animali', 20)
+    prefer('arduini', 4)
+    prefer('cirillo', 7)
+    prefer('coletta', 4)
+    prefer('de felici', 18)
+    prefer("d'errico", 20)
+    prefer('di laura', 16)
+    prefer('romanucci', 11)
+    prefer('mancini', 20)
+    prefer('integlia', 20)
+    prefer('police', 20)
+    prefer('famosi', 20)
+    prefer('mazzilli', 20)
+    prefer('limiti', 20)
+    prefer('rita', 20)
+    prefer('mercuri', 20)
+    prefer('santacchini', 20)
+    prefer('gosti', 1)
 
 
 def for_sim():
@@ -134,8 +133,6 @@ def check():
 
 
 for_sim()
-for p in range(len(class5AD)):
-    print(len(latin[p]))
 assign_weighted()
 check()
 print(latin)
